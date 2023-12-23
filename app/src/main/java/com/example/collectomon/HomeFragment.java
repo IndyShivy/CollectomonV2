@@ -151,6 +151,7 @@ public class HomeFragment extends Fragment{
                     int maxItemsToShow = 4; // Max items to show
                     int itemsToShow = Math.min(count, maxItemsToShow);
 
+                    System.out.println("itemsToShow: " + itemsToShow);
                     // Calculate item height dynamically or use a specific height
                     int singleItemHeight = 155; // Define or calculate the single item height
                     int dropdownHeight = itemsToShow * singleItemHeight;
