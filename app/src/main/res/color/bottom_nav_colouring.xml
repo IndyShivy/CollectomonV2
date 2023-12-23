@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><!--This modifies the colour of the icons and the text-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected state (when the icon is clicked) -->
+    <item android:color="#FFFFFF" android:state_checked="true" />
+    <!--This is got the colour when not selected-->
+    <item android:color="#636060" />
+</selector>

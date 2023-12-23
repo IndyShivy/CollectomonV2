@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Collectomon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="card_name">Card_Name</string>
+    <string name="deletecard">DeleteCard</string>
+    <string name="search_card">Search card</string>
+    <string name="cardimage">CardImage</string>
+    <string name="addcard">AddCard</string>
+    <string name="addartist">AddArtist</string>
+    <string name="restore">Restore</string>
+    <string name="applogo">AppLogo</string>
+    <string name="add_artist_name_here_exact">Add artist name here (exact)</string>
+    <string name="backup">Backup</string>
+    <string name="deleteartist">DeleteArtist</string>
+</resources>
