@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@drawable/frag_home_artists_list_item_rounding">>
+
+    <TextView
+        android:id="@+id/artist_name"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+       />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="80dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/secondary_colour_blue"
+        android:text="X"
+        android:textColor="#FFFFFF"
+        android:textScaleX="1.25" />
+</LinearLayout>
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    android:id="@android:id/text1"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:padding="16dp"-->
+    <!--    android:background="@drawable/list_item_background"-->
+    <!--    android:textAppearance="?android:attr/textAppearanceListItem" />-->

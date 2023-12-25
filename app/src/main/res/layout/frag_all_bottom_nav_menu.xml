@@ -20,7 +20,7 @@
         android:background="@color/bottom_bar"
         app:itemIconTint="@color/bottom_nav_colouring"
         app:itemTextColor="@color/bottom_nav_colouring"
-        app:menu="@menu/bottom_navigation_menu"
+        app:menu="@menu/frag_all_bottom_nav_menu_options"
         style="@style/CustomBottomNavigationView"
         app:itemRippleColor="@color/bottom_nav_selection_pill">
     </com.google.android.material.bottomnavigation.BottomNavigationView>

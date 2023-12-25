@@ -9,8 +9,9 @@
     <color name="divider_color">#CCCCCC</color>
     <color name="colorPrimary">#3A3A3A</color>
     <color name="colorPrimaryDark">#3A3A3A</color>
-    <color name="colorAccent">#6B1522</color>
-    <color name="icon_background">#343455</color>
+    <color name="primary_colour_red">#6B1522</color>
+    <color name="secondary_colour_blue">#343455</color>
+    <color name="frag_home_search_add_button">#5A0715</color>
     <color name="bottom_bar">#232323</color>
     <color name="bottom_nav_selection_pill">#0A0ACF</color>
     <color name="circle_color">#001C1C1D</color>

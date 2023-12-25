@@ -29,7 +29,7 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.collectionrow, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.frag_collection_collectionadapter_item, parent, false);
         return new ViewHolder(view);
     }
 

@@ -5,7 +5,7 @@
         <layer-list>
             <item>
                 <shape android:shape="rectangle">
-                    <solid android:color="@color/icon_background"/>
+                    <solid android:color="@color/secondary_colour_blue"/>
                     <stroke
                         android:color="#45494A"
                         android:width="2dp"

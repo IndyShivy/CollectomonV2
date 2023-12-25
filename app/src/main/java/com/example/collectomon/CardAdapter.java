@@ -32,7 +32,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemrow, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.frag_search_cardadapter_item, parent, false);
         databaseHelper = new CardDatabase(context);
         cardStuff = new ArrayList<>();
         return new ViewHolder(view);
