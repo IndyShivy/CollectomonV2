@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/artistName"
+    android:layout_width="346dp"
+    android:layout_height="50dp"
+    android:background="@color/frag_home_search_box_color"
+    android:gravity="center"
+    android:textColor="@android:color/black"
+    android:textSize="16sp"
+   />

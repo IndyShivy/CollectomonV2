@@ -20,6 +20,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,7 +47,20 @@ public class CollectionFragment extends Fragment {
         context = requireContext();
         databaseHelper = new CardDatabase(context);
     }
+    @Override
+    public void onResume() {
+        super.onResume();
 
+        // Set up the onBackPressed callback
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Replace the current fragment with HomeFragment
+                getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new HomeFragment()).commit();
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+    }
 
     @SuppressLint("NotifyDataSetChanged")
     @Override

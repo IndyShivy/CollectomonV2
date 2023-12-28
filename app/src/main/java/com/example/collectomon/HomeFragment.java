@@ -230,6 +230,8 @@ public class HomeFragment extends Fragment{
 
     private void saveArtistList(List<String> artistList) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        //alphabetical order
+        artistList.sort(String::compareToIgnoreCase);
         Set<String> set = new HashSet<>(artistList);
         editor.putStringSet(ARTIST_KEY, set);
         editor.apply();

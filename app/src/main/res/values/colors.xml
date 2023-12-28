@@ -15,4 +15,5 @@
     <color name="bottom_bar">#232323</color>
     <color name="bottom_nav_selection_pill">#0A0ACF</color>
     <color name="circle_color">#001C1C1D</color>
+    <color name="frag_home_search_box_color">#BABABA</color>
 </resources>

@@ -10,14 +10,17 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListPopupWindow;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +34,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -95,10 +100,25 @@ public class SearchFragment extends Fragment {
         activity = null;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // Set up the onBackPressed callback
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Replace the current fragment with HomeFragment
+                getFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new HomeFragment()).commit();
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+    }
+
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_search, container, false);
+        View rootView = inflater.inflate(R.layout.frag_search, container, false);
         context = requireContext();
         db = new CardDatabase(context);
 
@@ -109,7 +129,7 @@ public class SearchFragment extends Fragment {
         if (artistSet != null) {
             artistNames = new ArrayList<>(artistSet);
         }
-
+        Collections.sort(artistNames);
         spinnerArtists = rootView.findViewById(R.id.spinnerArtists);
         spinnerAdapter = new CustomSpinnerAdapter(context, artistNames);
         spinnerArtists.setAdapter(spinnerAdapter);
@@ -121,6 +141,8 @@ public class SearchFragment extends Fragment {
         cardItems = new ArrayList<>();
         cardAdapter = new CardAdapter(cardItems, context);
         recyclerView.setAdapter(cardAdapter);
+
+
 
         spinnerArtists.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -136,6 +158,21 @@ public class SearchFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+        spinnerArtists.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    // Get the height of a single item in the dropdown list
+                    int itemHeight = 48;
+                    // Calculate the total height for the number of items you want to display at a time
+                    int totalHeight = itemHeight * 5; // Change this to the number of items you want to display at a time
+                    // Set the dropdown height
+                    spinnerArtists.setDropDownVerticalOffset(totalHeight);
+                }
+                return false;
             }
         });
 
@@ -238,4 +275,7 @@ public class SearchFragment extends Fragment {
         scaleDown.setRepeatMode(ObjectAnimator.REVERSE);
         scaleDown.start();
     }
+
+
 }
+
